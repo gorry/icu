@@ -8,7 +8,7 @@
 # Only supported platforms are recognized
 
 me=`basename $0`
-OPTS=
+OPTS= 
 
 usage()
 {
@@ -79,20 +79,20 @@ do
     case "$1" in
     -h|--help)
         usage 0
-        ;;
+        ;; 
     --enable-debug)
         debug=1
         OPTS="$OPTS --enable-debug"
-        ;;
+        ;; 
     --disable-release)
         release=0
         OPTS="$OPTS --disable-release"
-        ;;
+        ;; 
     *)
         platform="$1"
         shift
         break
-        ;;
+        ;; 
     esac
     shift
 done
@@ -102,7 +102,7 @@ then
    usage 1
 fi
 
-# Go.
+# Go. 
 
 rm -f config.cache
 rm -f config.log
@@ -146,7 +146,7 @@ case $platform in
         fi
         RELEASE_CFLAGS="-O3 -qstrict=ieeefp"
         RELEASE_CXXFLAGS="-O3 -qstrict=ieeefp"
-        ;;
+        ;; 
     AIX/GCC)
         THE_OS=AIX
         THE_COMP="the GNU C++"
@@ -154,7 +154,7 @@ case $platform in
         CXX=g++; export CXX
         DEBUG_CFLAGS='-g -O0'
         DEBUG_CXXFLAGS='-g -O0'
-        ;;
+        ;; 
     AIX/OpenXL)
         THE_OS=AIX
         THE_COMP="ibm-clang_r"
@@ -168,7 +168,7 @@ case $platform in
         fi
         RELEASE_CFLAGS="-O3"
         RELEASE_CXXFLAGS="-O3"
-	;;
+	;; 
     Solaris)
         THE_OS=SOLARIS
         THE_COMP="Sun's CC"
@@ -176,7 +176,7 @@ case $platform in
         CXX=`which CC`; export CXX
         RELEASE_CFLAGS="-xO1 -xlibmil"
         RELEASE_CXXFLAGS="-O4 -xlibmil"
-        ;;
+        ;; 
     Solaris/GCC)
         THE_OS=SOLARIS
         THE_COMP="the GNU C++"
@@ -184,7 +184,7 @@ case $platform in
         CXX=g++; export CXX
         RELEASE_CFLAGS=-O1
         RELEASE_CXXFLAGS=-O2
-        ;;
+        ;; 
     SolarisX86)
         THE_OS="SOLARIS X86"
         THE_COMP="Sun's CC"
@@ -193,7 +193,7 @@ case $platform in
         LDFLAGS="${LDFLAGS} -lCrun";export LDFLAGS
         RELEASE_CFLAGS=-xO3
         RELEASE_CXXFLAGS=-O3
-        ;;
+        ;; 
     HP-UX/ACC)
         THE_OS="HP-UX 11"
         THE_COMP="aCC"
@@ -201,7 +201,7 @@ case $platform in
         CXX=aCC; export CXX
         RELEASE_CFLAGS='+O2 +Ofltacc'
         RELEASE_CXXFLAGS='+O2 +Ofltacc'
-        ;;
+        ;; 
     IBMi)
         THE_OS="IBM i"
         THE_COMP="the iCC C++"
@@ -214,7 +214,7 @@ case $platform in
         ac_cv_path_U_MAKE=gmake; export ac_cv_path_U_MAKE
         RELEASE_CFLAGS='-O4'
         RELEASE_CXXFLAGS='-O4'
-        ;;
+        ;; 
     Linux/ECC)
         THE_OS="Linux"
         THE_COMP="Intel ECC 7.1"
@@ -222,7 +222,7 @@ case $platform in
         CXX=ecpc; export CXX
         RELEASE_CFLAGS='-O2'
         RELEASE_CXXFLAGS='-O2'
-        ;;
+        ;; 
     Linux/ICC)
         THE_OS="Linux"
         CC=`which icc`; export CC
@@ -240,7 +240,7 @@ case $platform in
 		echo "ICC 9.0 does not work with optimization- disabling optimizations"
 	fi
         THE_COMP="Intel ${ICC_VER}"
-        ;;
+        ;; 
     Linux/VA)
         THE_OS="Linux"
         THE_COMP="IBM XL C++ Compiler"
@@ -248,7 +248,7 @@ case $platform in
         CXX=`which xlclang++`; export CXX
         RELEASE_CFLAGS="-O3"
         RELEASE_CXXFLAGS="-O3"
-        ;;
+        ;; 
     Linux/gcc)
         THE_OS="Linux"
         THE_COMP="the GNU C++"
@@ -258,7 +258,7 @@ case $platform in
         RELEASE_CXXFLAGS='-O3'
         DEBUG_CFLAGS='-g'
         DEBUG_CXXFLAGS='-g'
-        ;;
+        ;; 
     Linux/clang)
         THE_OS="Linux"
         THE_COMP="the Clang C++"
@@ -268,7 +268,7 @@ case $platform in
         RELEASE_CXXFLAGS='-O3'
         DEBUG_CFLAGS='-g'
         DEBUG_CXXFLAGS='-g'
-        ;;
+        ;; 
     Linux*)
         THE_OS="Linux"
         THE_COMP="the default C++"
@@ -276,13 +276,13 @@ case $platform in
         RELEASE_CXXFLAGS='-O3'
         DEBUG_CFLAGS='-g'
         DEBUG_CXXFLAGS='-g'
-        ;;
+        ;; 
     Cygwin)
         THE_OS="Cygwin"
         THE_COMP="the GNU C++"
         RELEASE_CFLAGS='-O3'
         RELEASE_CXXFLAGS='-O3'
-        ;;
+        ;; 
     Cygwin/MSVC)
         THE_OS="Windows with Cygwin"
         THE_COMP="Microsoft Visual C++"
@@ -293,7 +293,7 @@ case $platform in
         DEBUG_CFLAGS='-FS -Zi -MDd'
         DEBUG_CXXFLAGS='-FS -Zi -MDd'
         DEBUG_LDFLAGS='-DEBUG'
-        ;;
+        ;; 
     Cygwin/MSVC2005)
         THE_OS="Windows with Cygwin"
         THE_COMP="Microsoft Visual C++ 2005"
@@ -304,7 +304,7 @@ case $platform in
         DEBUG_CFLAGS='/Zi /MDd'
         DEBUG_CXXFLAGS='/Zi /MDd'
         DEBUG_LDFLAGS='/DEBUG'
-        ;;
+        ;; 
     Cygwin/ICL)
         THE_OS="Windows with Cygwin"
         THE_COMP="Intel C++"
@@ -316,7 +316,7 @@ case $platform in
         DEBUG_CFLAGS='/Zi'
         DEBUG_CXXFLAGS='/Zi'
         DEBUG_LDFLAGS='/DEBUG'
-        ;;
+        ;; 
     macOS|MacOSX)
         THE_OS="MacOS X (Darwin)"
         THE_COMP="the default"
@@ -324,7 +324,7 @@ case $platform in
         RELEASE_CXXFLAGS='-O2'
         DEBUG_CFLAGS='-g -O0'
         DEBUG_CXXFLAGS='-g -O0'
-        ;;
+        ;; 
     macOS/gcc|MacOSX/GCC)
         THE_OS="MacOS X (Darwin)"
         THE_COMP="the GNU C++"
@@ -334,14 +334,14 @@ case $platform in
         DEBUG_CXXFLAGS='-g -O0'
         CC=gcc; export CC
         CXX=g++; export CXX
-        ;;
+        ;; 
     MinGW)
         THE_OS="MinGW"
         THE_COMP="the GNU C++"
         RELEASE_CFLAGS='-O3'
         RELEASE_CXXFLAGS='-O3'
         export CXXFLAGS
-        ;;
+        ;; 
     MSYS/MSVC)
         THE_OS="MSYS"
         THE_COMP="Microsoft Visual C++"
@@ -352,25 +352,25 @@ case $platform in
         DEBUG_CFLAGS='-FS -Zi -MDd'
         DEBUG_CXXFLAGS='-FS -Zi -MDd'
         DEBUG_LDFLAGS='-DEBUG'
-        ;;
+        ;; 
     *BSD)
         THE_OS="BSD"
         THE_COMP="the GNU C++"
         DEBUG_CFLAGS='-g -O0'
         DEBUG_CXXFLAGS='-g -O0'
-        ;;
+        ;; 
     TRU64V5.1/CXX)
         THE_OS="OSF1"
         THE_COMP="Compaq cxx"
         CC=cc; export CC
         CXX=cxx; export CXX
-        ;;
+        ;; 
     QNX)
         THE_OS="QNX"
         THE_COMP="QNX cc"
         CC=qcc; export CC
         CXX=QCC; export CXX
-        ;;
+        ;; 
     zOS)
         THE_OS="z/OS (OS/390)"
         THE_COMP="IBM OpenXL C/C++"
@@ -388,10 +388,10 @@ case $platform in
         DEBUG_CFLAGS='-g -O0 -m32 -D_UNIX03_SOURCE -D_UNIX03_THREADS -D_POSIX_SOURCE -D_POSIX_THREADS -D_OPEN_SYS_SOCK_IPV6=1 -D_XOPEN_SOURCE_EXTENDED=1 -DOE_SOCKETS -D_OPEN_SYS_IF_EXT=1'
         DEBUG_CXXFLAGS='-g -O0 -m32 -D_UNIX03_SOURCE -D_UNIX03_THREADS -D_POSIX_SOURCE -D_POSIX_THREADS -D_OPEN_SYS_SOCK_IPV6=1 -D_XOPEN_SOURCE_EXTENDED=1 -DOE_SOCKETS -D_OPEN_SYS_IF_EXT=1'
         DEBUG_LDFLAGS='-m32'
-        ;;
+        ;; 
     *)
         >&2 echo "$me: unrecognized platform \"$platform\" (use --help for help)"
-        exit 1;;
+        exit 1;; 
 esac
 
 
@@ -404,7 +404,7 @@ then
         case $CC in
             gcc|*/gcc|*-gcc-*|*/*-gcc-*)
                 RELEASE_CFLAGS=-O3
-                ;;
+                ;; 
         esac
     fi
     if test "$RELEASE_CFLAGS" != ""
@@ -416,7 +416,7 @@ then
         case $CXX in
             g++|*/g++|*-g++-*|*/*-g++-*)
                 RELEASE_CXXFLAGS=-O3
-                ;;
+                ;; 
         esac
     fi
     if test "$RELEASE_CXXFLAGS" != ""
@@ -458,8 +458,8 @@ if $configure $OPTS $@
 then
 	echo
 	echo If the result of the above commands looks okay to you, go to the directory
-	echo source in the ICU distribution to build ICU. Please remember that ICU needs
-	echo GNU make to build properly...
+	source in the ICU distribution to build ICU. Please remember that ICU needs
+	GNU make to build properly...
 else
 	echo $0: ./configure failed
 	exit 1

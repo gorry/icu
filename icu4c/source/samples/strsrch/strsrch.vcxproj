@@ -37,7 +37,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\common;..\..\i18n;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderOutputFile>.\x86\Debug/strsrch.pch</PrecompiledHeaderOutputFile>
@@ -52,7 +52,7 @@
       <AdditionalDependencies>icuind.lib;icuucd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x86\Debug/strsrch.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\x86\Debug/strsrch.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
@@ -66,7 +66,7 @@
     </Midl>
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\common;..\..\i18n;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderOutputFile>.\x64\Debug/strsrch.pch</PrecompiledHeaderOutputFile>
@@ -80,7 +80,7 @@
     <Link>
       <AdditionalDependencies>icuind.lib;icuucd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x64\Debug/strsrch.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\x64\Debug/strsrch.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
@@ -95,7 +95,7 @@
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <AdditionalIncludeDirectories>..\..\common;..\..\i18n;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -110,7 +110,7 @@
     <Link>
       <AdditionalDependencies>icuin.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x86\Release/strsrch.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\x86\Release/strsrch.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <DataExecutionPrevention>
@@ -124,7 +124,7 @@
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <AdditionalIncludeDirectories>..\..\common;..\..\i18n;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -140,7 +140,7 @@
       <AdditionalDependencies>icuin.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x64\Release/strsrch.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\x64\Release/strsrch.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <DataExecutionPrevention>

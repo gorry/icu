@@ -44,7 +44,7 @@
       <TypeLibraryName>.\..\..\lib\iculx.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeaderOutputFile>.\x86\Release/layoutex.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\x86\Release/</AssemblerListingLocation>
@@ -67,7 +67,7 @@
       <TypeLibraryName>.\..\..\lib\iculxd.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeaderOutputFile>.\x86\Debug/layoutex.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\x86\Debug/</AssemblerListingLocation>
       <ObjectFileName>.\x86\Debug/</ObjectFileName>
@@ -91,7 +91,7 @@
       <TypeLibraryName>.\..\..\lib64\iculx.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeaderOutputFile>.\x64\Release/layoutex.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\x64\Release/</AssemblerListingLocation>
@@ -112,7 +112,7 @@
       <TypeLibraryName>.\..\..\lib64\iculxd.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeaderOutputFile>.\x64\Debug/layoutex.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\x64\Debug/</AssemblerListingLocation>
       <ObjectFileName>.\x64\Debug/</ObjectFileName>

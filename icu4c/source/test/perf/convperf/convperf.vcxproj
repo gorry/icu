@@ -75,7 +75,7 @@
       <AdditionalIncludeDirectories>..\..\..\tools\toolutil;..\..\..\common;..\..\..\tools\ctestfw;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -95,7 +95,7 @@
       <AdditionalDependencies>icuuc.lib;icutu.lib;icutest.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x86\Release/convperf.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\..\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\....\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\x86\Release/convperf.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <DataExecutionPrevention>
@@ -116,7 +116,7 @@
       <AdditionalIncludeDirectories>..\..\..\tools\toolutil;..\..\..\common;..\..\..\tools\ctestfw;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN64;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -136,7 +136,7 @@
       <AdditionalDependencies>icuuc.lib;icutu.lib;icutest.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x64\Release/convperf.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\..\lib64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\....\lib64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\x64\Release/convperf.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <DataExecutionPrevention>
@@ -155,7 +155,7 @@
       <AdditionalIncludeDirectories>..\..\..\tools\toolutil;..\..\..\common;..\..\..\tools\ctestfw;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderOutputFile>.\x86\Debug/convperf.pch</PrecompiledHeaderOutputFile>
@@ -175,7 +175,7 @@
       <AdditionalDependencies>icuucd.lib;icutud.lib;icutestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x86\Debug/convperf.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\..\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\....\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\x86\Debug/convperf.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
@@ -195,7 +195,7 @@
       <AdditionalIncludeDirectories>..\..\..\tools\toolutil;..\..\..\common;..\..\..\tools\ctestfw;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN64;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderOutputFile>.\x64\Debug/convperf.pch</PrecompiledHeaderOutputFile>
@@ -215,7 +215,7 @@
       <AdditionalDependencies>icuucd.lib;icutud.lib;icutestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x64\Debug/convperf.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\..\lib64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\....\lib64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\x64\Debug/convperf.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>

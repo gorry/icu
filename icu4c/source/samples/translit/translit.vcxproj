@@ -42,7 +42,7 @@
       <TypeLibraryName>.\x86\Debug/translit.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderOutputFile>.\x86\Debug/translit.pch</PrecompiledHeaderOutputFile>
@@ -55,7 +55,7 @@
     <Link>
       <AdditionalDependencies>icuucd.lib;icuind.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x86\Debug/translit.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\x86\Debug/translit.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
@@ -68,7 +68,7 @@
       <TypeLibraryName>.\x64\Debug/translit.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderOutputFile>.\x64\Debug/translit.pch</PrecompiledHeaderOutputFile>
@@ -81,7 +81,7 @@
     <Link>
       <AdditionalDependencies>icuucd.lib;icuind.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x64\Debug/translit.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\x64\Debug/translit.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
@@ -95,7 +95,7 @@
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -108,7 +108,7 @@
     <Link>
       <AdditionalDependencies>icuuc.lib;icuin.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x86\Release/translit.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\x86\Release/translit.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <DataExecutionPrevention>
@@ -121,7 +121,7 @@
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -134,7 +134,7 @@
     <Link>
       <AdditionalDependencies>icuuc.lib;icuin.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\x64\Release/translit.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\x64\Release/translit.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <DataExecutionPrevention>

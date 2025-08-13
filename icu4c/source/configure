@@ -3188,7 +3188,14 @@ printf %s "checking for ICU version numbers... " >&6; }
 
 # Get the ICU version from uversion.h or other headers
 geticuversion() {
-    sed -n 's/^[ 	]*#[ 	]*define[ 	]*U_ICU_VERSION[ 	]*"\([^"]*\)".*/\1/p' "$@"
+    echo "--- DEBUG: Inspecting file in geticuversion ---"
+    ls -l "$@"
+    echo "---"
+    head -n 5 "$@"
+    echo "---"
+    file "$@"
+    echo "--- END DEBUG ---"
+    sed -n 's/^[ \t]*#[ \t]*define[ \t]*U_ICU_VERSION[ \t]*"\([^"\)]*\)".*/\1/p' "$@"
 }
 getuversion() {
     sed -n 's/^[ 	]*#[ 	]*define[ 	]*U_UNICODE_VERSION[ 	]*"\([^"]*\)".*/\1/p' "$@"

@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version='1.0' encoding='UTF-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="14.0">
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D3065ADB-8820-4CC7-9B6C-9510833961A3}</ProjectGuid>
   </PropertyGroup>
@@ -8,25 +8,23 @@
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <!-- The following import will include the 'default' configuration options for VS projects. -->
-  <Import Project="..\..\allinone\Build.Windows.ProjectConfiguration.props" />
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <Import Project="..\..\allinone\Build.Windows.ProjectConfiguration.props"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="UserMacros"/>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <OutDir>.\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>.\$(Platform)\$(Configuration)\</IntDir>
-    <!-- The ICU projects use "Win32" to mean "x86", so we need to special case it. -->
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <OutDir Condition="'$(Platform)'=='Win32'">.\x86\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Platform)'=='Win32'">.\x86\$(Configuration)\</IntDir>
-    <!-- Disable Incremental Linking for Release builds as it prevents Link-time Code Generation -->
-    <LinkIncremental Condition="'$(Configuration)'=='Debug'">true</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)'=='Release'">false</LinkIncremental>
   </PropertyGroup>
-  <!-- Options that are common to *all* configurations -->
   <ItemDefinitionGroup>
     <Midl>
       <TypeLibraryName>$(OutDir)/derb.tlb</TypeLibraryName>
@@ -35,6 +33,7 @@
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>Default</CompileAs>
       <AdditionalIncludeDirectories>..\..\i18n;..\..\common;..\toolutil;..\..\io;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>U_STATIC_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile>$(OutDir)/derb.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(OutDir)/</AssemblerListingLocation>
       <ObjectFileName>$(OutDir)/</ObjectFileName>
@@ -43,36 +42,40 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)/derb.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\$(IcuLibOutputDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../../$(IcuLibOutputDir);../../stubdata/$(Platform)/$(Configuration);../../common/$(Platform)/$(Configuration);../../i18n/$(Platform)/$(Configuration);../../io/$(Platform)/$(Configuration);../../tools/toolutil/$(Platform)/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
-      <Command>copy "$(TargetPath)" ..\..\..\$(IcuBinOutputDir)</Command>
+      <Command>copy "$(TargetPath)" "..\..\..\$(IcuBinOutputDir)"</Command>
       <Outputs>..\..\..\$(IcuBinOutputDir)\$(TargetFileName);%(Outputs)</Outputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <!-- Options that are common to all 'Debug' project configurations -->
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>icuucd.lib;icuind.lib;icuiod.lib;icutud.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>icuuc.lib;icuin.lib;icutud.lib;icuiod.lib;icudtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <!-- Options that are common to all 'Release' project configurations -->
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+        <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>icuuc.lib;icuin.lib;icuio.lib;icutu.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>icuuc.lib;icuin.lib;icutu.lib;icuio.lib;stubdata.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="derb.cpp" />
+    <ClCompile Include="derb.cpp"/>
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\common.vcxproj">
+      <Project>{73c0a429-d822-4361-96b7-46ac3f98b9b5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
